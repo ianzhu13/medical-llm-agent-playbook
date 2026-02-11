@@ -23,6 +23,9 @@ This project adopts a "Human-in-the-Loop" (HITL) design principle. We explicitly
 * **Uncertainty Handling:** Designing prompts that force the model to say "I don't know" rather than hallucinating solutions.
 * **Refusal over Hallucination:** Implementing strict guardrails to reject ambiguous or unsafe requests.
 
+
+![alt text](./assets/demo_execution_30nm_case.png)
+
 ## 3. The Problem & Solution
 
 | Pain Point in Medical AI | Agent Solution |
