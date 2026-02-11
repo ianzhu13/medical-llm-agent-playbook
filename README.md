@@ -23,6 +23,16 @@ This project adopts a "Human-in-the-Loop" (HITL) design principle. We explicitly
 * **Uncertainty Handling:** Designing prompts that force the model to say "I don't know" rather than hallucinating solutions.
 * **Refusal over Hallucination:** Implementing strict guardrails to reject ambiguous or unsafe requests.
 
+## ⚡ Live Demo: Expert Logic in Action
+
+The agent does not simply retrieve text; it executes a **Chain-of-Thought (CoT)** reasoning process derived from real-world clinical deployment experience.
+
+> **Scenario:** A user attempts to use standard Super-Resolution on low-bandwidth (30nm) OCT scans.
+> **Agent Action:** The system detects the hardware constraint, **refuses** the standard approach to prevent "layer thickening" artifacts, and recommends a physics-aware GAN strategy.
+
+![Agent Reasoning Demo](assets/demo_execution_30nm_case.png)
+*Figure 1: The simulation engine executing reasoning steps. Note the specific rejection of standard SR due to potential clinical misdiagnosis risks.*
+
 ## 3. The Problem & Solution
 
 | Pain Point in Medical AI | Agent Solution |
