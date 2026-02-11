@@ -44,6 +44,25 @@ The agent operates on a 3-stage **Chain-of-Thought (CoT)** flow:
     * Generates executable Python/YAML configurations for training frameworks (e.g., nnUNet).
     * Produces a "Feasibility Report" explaining the rationale.
 
+### Architecture Flowchart
+
+```mermaid
+graph TD
+    A[User Query] --> B{Safety Check Layer}
+    B -- "Medical Advice/Diagnosis" --> C["⛔ Refusal Response"]
+    B -- "Research/Config Task" --> D["Context Retrieval (RAG)"]
+    D --> E[LLM Reasoning Core]
+    
+    subgraph "Chain of Thought (CoT)"
+    E --> F[Analyze Data Stats]
+    F --> G[Match Architectural Bias]
+    G --> H[Select Hyperparameters]
+    end
+    
+    H --> I["Generate Config (JSON)"]
+    I --> J[Feasibility Report]
+```
+
 ## 5. Roadmap
 * [x] **Phase 1: Definition** - Domain analysis (OCT focus) and Safety Boundary definition.
 * [x] **Phase 2: Prompt Engineering** - Developing System Prompts for "Senior Medical Consultant" persona with strict JSON output constraints.
